@@ -1,0 +1,30 @@
+networks:
+    default: development
+    moonriver:
+        gas_limit: 15_000_000
+        gas_price: 1_000_000_000
+
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts@4.1.0
+
+compiler:
+    evm_version: null
+    solc:
+        version: 0.8.10
+        optimizer:
+            enabled: true
+            runs: 5
+        remappings:
+            - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.1.0"
+
+reports:
+  exclude_contracts:
+    - Clones
+    - vAccounts_mock
+    - xcTOKEN_mock
+    - AUX_mock
+    - TransparentUpgradeableProxy
+    - ProxyAdmin
+    - SafeCast
+    - SafeMath
+    - Address
